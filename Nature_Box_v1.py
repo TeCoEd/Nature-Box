@@ -34,7 +34,8 @@ GPIO.setmode(GPIO.BCM)
 PIR = 7
 GPIO.setup(PIR, GPIO.IN)
 ###Grabs the current time and day to add to the Tweet###
-time_of_tweet = time.asctime( time.localtime(time.time()) )
+global time_of_tweet
+
 global File_Number ###number if photo
 global file_name ###name of photo
 File_Number = 1
@@ -61,7 +62,9 @@ def Nature_selfie(): ###Takes a picture of the wee Beastie###
             File_Number = File_Number + 1
 
 def Motion_Sensing(PIR): ###Response to movement###
+    global time_of_tweet
     print "We see you"
+    time_of_tweet = time.asctime( time.localtime(time.time()) )
     Nature_selfie()
     #tweet_the_picture()
             
