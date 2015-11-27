@@ -78,7 +78,7 @@ try:
     while 1:
         time.sleep(100)
 except KeyboardInterrupt:
-    print "Quit"
+    print  "Quit"
     GPIO.cleanup()
 
 
