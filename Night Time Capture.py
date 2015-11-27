@@ -7,9 +7,6 @@ import picamera
 import subprocess
 import RPi.GPIO as GPIO
 
-time_of_photo = time.asctime( time.localtime(time.time()) )
-print time_of_photo
-
 GPIO.setmode(GPIO.BCM)
 ###Set up the PIR
 PIR = 7
@@ -17,7 +14,7 @@ GPIO.setup(PIR, GPIO.IN)
 ###Set up the LISPARIO
 GPIO.setup(10, GPIO.OUT) 
 ###Grabs the current time and day to add to the Tweet###
-time_of_picture = time.asctime( time.localtime(time.time()) )
+
 global File_Number ###number if photo
 global file_name ###name of photo
 File_Number = 1
@@ -25,6 +22,8 @@ File_Number = 1
 def Nature_selfie(): ###Takes a picture of the wee Beastie###
     global File_Number
     global file_name
+    ###Grabs current time###
+    time_of_photo = time.asctime( time.localtime(time.time()) )
     GPIO.output(10, GPIO.HIGH)
     with picamera.PiCamera() as camera:
             #camera.start_preview()
