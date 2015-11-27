@@ -13,7 +13,6 @@ PIR = 7
 GPIO.setup(PIR, GPIO.IN)
 ###Set up the LISPARIO
 GPIO.setup(10, GPIO.OUT) 
-###Grabs the current time and day to add to the Tweet###
 
 global File_Number ###number if photo
 global file_name ###name of photo
